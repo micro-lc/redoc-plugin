@@ -1,4 +1,4 @@
-# Microlc Redoc Plugin walkthrough
+# micro-lc Redoc Plugin walkthrough
 
 [![Build Status][github-actions-svg]][github-actions]
 
