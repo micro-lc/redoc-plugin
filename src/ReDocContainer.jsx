@@ -6,7 +6,7 @@
  * Copyright notice are available at https://docs.mia-platform.eu/info/oss/.
  */
 
-import React, {useCallback, useEffect, useState} from 'react'
+import React, {useCallback, useState} from 'react'
 import PropTypes from 'prop-types'
 import {RedocStandalone} from 'redoc'
 import {LoadingAnimation} from '@mia-platform/microlc-ui-components'
@@ -15,21 +15,10 @@ import './ReDocContainer.css'
 
 const DISPLAY_INITIAL = {display: 'initial'}
 const DISPLAY_NONE = {display: 'none'}
-const CHECK_RENDER_INTERVAL = 2000
 const REDOC_OPTIONS = {hideLoading: true}
 
 export const ReDocContainer = (props) => {
   const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    const checkPageLoading = setInterval(() => {
-      if (window.document.querySelector('.redoc-wrap')) {
-        setIsLoading(false)
-        clearInterval(checkPageLoading)
-      }
-    }, CHECK_RENDER_INTERVAL)
-    return () => clearInterval(checkPageLoading)
-  }, [])
 
   const display = useCallback((displayAtLoading) => {
     return displayAtLoading === isLoading ? DISPLAY_INITIAL : DISPLAY_NONE
