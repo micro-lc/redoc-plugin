@@ -26,7 +26,7 @@ export const ReDocContainer = (props) => {
 
   return (
     <>
-      <div style={display(true)}>
+      <div data-testid='redoc' style={display(true)}>
         <LoadingAnimation />
       </div>
       <RedocStandalone

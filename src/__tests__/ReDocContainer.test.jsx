@@ -7,13 +7,12 @@
  */
 
 import React from 'react'
-import {render, screen, waitFor} from '@testing-library/react'
+import {render, screen} from '@testing-library/react'
 import ReDocContainer from '../ReDocContainer'
 
 describe('ReDocContainer test', () => {
   it('Correctly show redoc page', async () => {
     render(<ReDocContainer openApispecUrl={'http://petstore.swagger.io/v2/swagger.json'}/>)
-    const page = await waitFor(() => screen.getByTestId('redoc'))
-    expect(page).toBeTruthy()
+    expect(screen.getByTestId('redoc')).toBeTruthy()
   })
 })
