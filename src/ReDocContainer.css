@@ -1,0 +1,136 @@
+/*
+*Copyright © 2021-present Mia s.r.l.
+*All rights reserved
+
+*Mia-Platform uses Open Source Software.
+*Copyright notice are available at https://docs.mia-platform.eu/info/oss/.
+*/
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+  border: 1px solid var(--microlc-menu-label-color) !important;
+}
+
+li > code {
+  color: black !important;
+  border: 1px solid black !important;
+}
+
+redoc > div {
+  display: none;
+}
+
+/* this is the left dark column didn't find other selectors for the second class*/
+div.redoc-wrap > div:last-child,
+.lbbVrV {
+  background: var(--microlc-dark-background) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h5 > span,
+.dropdown-selector-value,
+p,
+strong,
+code {
+  color: var(--microlc-text-color) !important;
+}
+
+label[role="menuitem"] > span,
+input[aria-label="Search"]::placeholder,
+div[role="search"] > i,
+label[role="menuitem"] > span,
+td > div > div > span {
+  color: var(--microlc-menu-label-color) !important;
+}
+
+label[role="menuitem"] > span[type="delete"],
+label[role="menuitem"] > span[type="get"],
+label[role="menuitem"] > span[type="put"],
+label[role="menuitem"] > span[type="post"] {
+  color: var(--microlc-text-color) !important;
+}
+
+table {
+  background-color: var(--microlc-body-background) !important;
+}
+
+tr > td > span,
+tr > td > button > span {
+  color: var(--microlc-primary-color);
+}
+
+a {
+  border-color: var(--microlc-primary-color) !important;
+  color: var(--microlc-primary-color) !important;
+}
+
+div.menu-content {
+  background-color: var(--microlc-body-background) !important;
+  border-right: solid 1px var(--microlc-menu-sublabel-color) !important;
+}
+
+label[role="menuitem"].active {
+  color: var(--microlc-primary-color) !important;
+  background-color: var(--microlc-hover-color) !important;
+  border-right: solid 3px var(--microlc-primary-color) !important;
+}
+
+label[role="menuitem"].active > span,
+label[role="menuitem"]:hover > span,
+#root > div > div.menu-content > div:nth-child(2) > ul > li > label > span,
+label[role="menuitem"]:hover > span {
+  color: var(--microlc-primary-color) !important;
+}
+
+label[role="menuitem"]:hover > span {
+  border-left: 2px var(--microlc-primary-color) !important;
+}
+
+label[role="menuitem"].-depth2 > span {
+  color: var(--microlc-menu-sublabel-color) !important;
+}
+
+div#root > div > div:first-child {
+  background: transparent;
+  border-right: 1px solid var(--microlc-top-bar-divider-color);
+}
+
+input[aria-label="Search"] {
+  height: 61px;
+  color: var(--microlc-menu-label-color) !important;
+}
+
+div[role="search"] > svg {
+  height: 61px;
+}
+
+svg.search-icon > path {
+  fill: var(--microlc-menu-label-color);
+}
+
+label[role="menuitem"]:hover {
+  background-color: var(--microlc-hover-color) !important;
+}
+
+label[role="menuitem"] > svg > polygon {
+  fill: var(--microlc-menu-label-color) !important;
+}
+
+label[role="menuitem"].active > svg > polygon {
+  fill: var(--microlc-primary-color) !important;
+}
