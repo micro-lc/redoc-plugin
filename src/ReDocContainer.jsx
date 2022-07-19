@@ -8,14 +8,15 @@
 
 import React, {useCallback, useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
-
-import {Helmet} from 'react-helmet'
+import {RedocStandalone} from 'redoc'
 import {LoadingAnimation} from '@mia-platform/microlc-ui-components'
+
 import './ReDocContainer.css'
 
 const DISPLAY_INITIAL = {display: 'initial'}
 const DISPLAY_NONE = {display: 'none'}
 const CHECK_RENDER_INTERVAL = 2000
+const REDOC_OPTIONS = {hideLoading: true}
 
 export const ReDocContainer = (props) => {
   const [isLoading, setIsLoading] = useState(true)
@@ -31,18 +32,20 @@ export const ReDocContainer = (props) => {
   }, [])
 
   const display = useCallback((displayAtLoading) => {
-    return (displayAtLoading === isLoading) ? DISPLAY_INITIAL : DISPLAY_NONE
+    return displayAtLoading === isLoading ? DISPLAY_INITIAL : DISPLAY_NONE
   }, [isLoading])
 
   return (
     <>
-      <Helmet>
-        <script src="https://cdn.jsdelivr.net/npm/redoc@2.0.0-rc.53/bundles/redoc.standalone.js"></script>
-      </Helmet>
       <div style={display(true)}>
         <LoadingAnimation />
       </div>
-      <redoc data-testid='redoc' spec-url={props.openApiSpecUrl} style={display(false)}/>
+      <RedocStandalone
+        onLoaded={() => setIsLoading(false)}
+        options={REDOC_OPTIONS}
+        specUrl={props.openApiSpecUrl}
+        style={display(false)}
+      />
     </>
   )
 }
