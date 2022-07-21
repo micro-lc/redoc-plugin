@@ -62,7 +62,7 @@
     "@rescripts/cli": "^0.0.16",
     "@staticdeploy/mock-server": "^3.0.0",
     "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^11.2.5",
+    "@testing-library/react": "^12.1.5",
     "@testing-library/react-hooks": "^8.0.1",
     "@testing-library/user-event": "^13.5.0",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.7",
